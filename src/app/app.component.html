@@ -1,6 +1,6 @@
+<app-topbar></app-topbar>
+<app-dashboard *ngIf="logged; else elseBlock"></app-dashboard>
 
-<app-toolbar (newItemEvent)="onNewItem($event)"></app-toolbar>
-<div class="container" >
-  <app-list *ngIf="activePage==='list'"  ></app-list>
-  <app-add *ngIf="activePage==='add'"></app-add>
-</div>
+<ng-template #elseBlock>
+    <app-login></app-login>
+</ng-template>
